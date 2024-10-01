@@ -5,15 +5,17 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '4173:4173'
+      - '3000:4173'
     environment:
       - NODE_ENV=production
     labels:
       - traefik.enable=true
-      - traefik.http.routers.rplay_client.rule=Host(`*.haniking.com`)
+      - traefik.http.routers.rplay_client.rule=Host(`rplay.haniking.com`)
       - traefik.http.routers.rplay_client.entrypoints=websecure
       - traefik.http.routers.rplay_client.tls.certresolver=myresolver
-      - traefik.http.services.rplay_client.loadbalancer.server.port=4173 # Specify internal service port for Traefik to route
+      - 'traefik.http.routers.rplay_client.tls.domains[0].main=haniking.kr'
+      - 'traefik.http.routers.rplay_client.tls.domains[0].sans=*.haniking.kr'
+      - traefik.http.services.rplay_client.loadbalancer.server.port=3000 # Specify internal service port for Traefik to route
     networks:
       - web
 
