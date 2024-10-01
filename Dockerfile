@@ -19,4 +19,4 @@ COPY . .
 RUN pnpm run build
 
 # Start the app
-CMD pnpm run start
+CMD pnpm run preview
