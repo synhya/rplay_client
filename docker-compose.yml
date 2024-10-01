@@ -1,10 +1,11 @@
 services:
   rplay_client:
+    container_name: rplay_client
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - '3000:3000'
     environment:
       - NODE_ENV=production
     labels:
