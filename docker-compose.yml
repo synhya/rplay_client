@@ -7,13 +7,8 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=production
-    networks:
-      - web
     labels:
       - traefik.enable=true
       - traefik.http.routers.rplay_client.rule=Host(`rplay.haniking.com`)
-      - traefik.http.routers.rplay_client.entrypoints=web
-      
-networks:
-  web:
-    external: true
+      - traefik.http.routers.rplay_client.entrypoints=websecure
+      - traefik.http.routers.rplay_client.tls.certresolver=myresolver
