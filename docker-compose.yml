@@ -10,7 +10,7 @@ services:
       - NODE_ENV=production
     labels:
       - traefik.enable=true
-      - traefik.http.routers.rplay_client.rule=Host(`rplay.haniking.com`)
+      - traefik.http.routers.rplay_client.rule=Host(`*.haniking.com`)
       - traefik.http.routers.rplay_client.entrypoints=websecure
       - traefik.http.routers.rplay_client.tls.certresolver=myresolver
       - traefik.http.services.rplay_client.loadbalancer.server.port=4173 # Specify internal service port for Traefik to route
