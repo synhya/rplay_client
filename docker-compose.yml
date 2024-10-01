@@ -13,8 +13,8 @@ services:
       - traefik.http.routers.rplay_client.rule=Host(`rplay.haniking.com`)
       - traefik.http.routers.rplay_client.entrypoints=websecure
       - traefik.http.routers.rplay_client.tls.certresolver=myresolver
-      - 'traefik.http.routers.rplay_client.tls.domains[0].main=haniking.kr'
-      - 'traefik.http.routers.rplay_client.tls.domains[0].sans=*.haniking.kr'
+      - 'traefik.http.routers.rplay_client.tls.domains[0].main=haniking.com'
+      - 'traefik.http.routers.rplay_client.tls.domains[0].sans=*.haniking.com'
       - traefik.http.services.rplay_client.loadbalancer.server.port=3001 # Specify internal service port for Traefik to route
     networks:
       - web
