@@ -4,7 +4,7 @@ FROM node:22.9.0-slim
 RUN npm install -g pnpm
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copy package.json and pnpm-lock.yaml
 COPY package.json pnpm-lock.yaml ./
