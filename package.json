@@ -11,16 +11,23 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vee-validate/zod": "^4.13.2",
+    "@vueuse/core": "^11.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "embla-carousel-vue": "^8.3.0",
     "hls.js": "^1.5.15",
     "lucide-vue-next": "^0.447.0",
     "radix-vue": "^1.9.6",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
+    "vaul-vue": "^0.2.0",
+    "vee-validate": "^4.13.2",
     "video.js": "^8.17.4",
     "vue": "^3.4.29",
-    "vuex": "^4.0.2"
+    "vue-sonner": "^1.2.1",
+    "vuex": "^4.0.2",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
