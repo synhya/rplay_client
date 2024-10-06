@@ -1,63 +1,28 @@
 <script setup>
-  import HelloWorld from './components/HelloWorld.vue'
-  import TheWelcome from './components/TheWelcome.vue'
-  import Button from './components/ui/button'
+import { onMounted } from 'vue'
+import Sidebar from './components/layout/sidebar/MainSidebar.vue'
+import SidebarLogo from './components/layout/sidebar/SidebarLogo.vue'
+import Header from './components/layout/header/MainHeader.vue'
+import HomePage from './pages/HomePage.vue'
 
-  import { ref, onMounted } from 'vue'
-
-  const count = ref(0);
-
-  const increment = () => {
-    count.value++;
-  }
-
-  onMounted(() => {
-    console.log('Component is mounted');
-  })
+onMounted(() => {
+  console.log('Component is mounted')
+})
 </script>
 
 <template>
-  hi......
-  <Button @click="increment">Increment</Button>
-  <p>Count is: {{ count }}</p>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div class="relative flex flex-col items-start flex-grow h-full">
+    <div class="relative z-10 flex items-start w-full">
+      <div>
+        <SidebarLogo />
+        <Sidebar />
+      </div>
+      <div class="relative flex flex-col items-center w-full h-full overflow-hidden md:mr-6">
+        <Header />
+        <main class="relative flex flex-row w-full h-full min-h-screen">
+          <HomePage />
+        </main>
+      </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
