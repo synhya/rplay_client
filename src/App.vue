@@ -2,6 +2,12 @@
 import Sidebar from './components/layout/sidebar/MainSidebar.vue'
 import SidebarLogo from './components/layout/sidebar/SidebarLogo.vue'
 import Header from './components/layout/header/MainHeader.vue'
+import LoginModal from './components/modal/LoginModal.vue';
+import { useStore } from 'vuex';
+import { computed } from 'vue';
+
+const store = useStore();
+const showLoginModal = computed(() => store.state.showLoginModal);
 </script>
 
 <template>
@@ -19,6 +25,7 @@ import Header from './components/layout/header/MainHeader.vue'
           <RouterView />
         </main>
       </div>
+      <LoginModal v-if="showLoginModal" />
     </div>
   </div>
 </template>
