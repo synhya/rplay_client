@@ -1,13 +1,7 @@
 <script setup>
-import { onMounted } from 'vue'
 import Sidebar from './components/layout/sidebar/MainSidebar.vue'
 import SidebarLogo from './components/layout/sidebar/SidebarLogo.vue'
 import Header from './components/layout/header/MainHeader.vue'
-import HomePage from './pages/HomePage.vue'
-
-onMounted(() => {
-  console.log('Component is mounted')
-})
 </script>
 
 <template>
@@ -17,10 +11,12 @@ onMounted(() => {
         <SidebarLogo />
         <Sidebar />
       </div>
-      <div class="relative flex flex-col items-center w-full h-full overflow-hidden md:mr-6">
+      <div
+        class="relative flex flex-col items-center w-full h-full min-h-screen overflow-hidden md:mr-6"
+      >
         <Header />
-        <main class="relative flex flex-row w-full h-full min-h-screen">
-          <HomePage />
+        <main class="relative flex flex-col w-full h-full flex-grow">
+          <RouterView />
         </main>
       </div>
     </div>
