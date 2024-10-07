@@ -13,6 +13,7 @@ import Category from './pages/Category.vue'
 import ChatBox from './pages/ChatBox.vue'
 import NavigationLayout from '@/components/layout/NavigationLayout.vue'
 import store from './store'
+import Info from './pages/Info.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -51,7 +52,10 @@ const router = createRouter({
         { path: '', name: 'studio', component: Studio },
         { path: 'uploader/:type', name: 'uploader', component: Uploader, props: true }
       ]
-    }
+    },
+
+    // 인포 , 약관 https://rplay.live/info/oppolicy1
+    { path: '/info/:type', name: 'info', component: Info, props: true },
   ]
 })
 
